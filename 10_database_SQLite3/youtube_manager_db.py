@@ -1,7 +1,7 @@
 
 import sqlite3
 
-conn = sqlite3.connect('youtube_videos.db')
+conn = sqlite3.connect('youtube_videos.sql')
 
 cursor = conn.cursor()
 
