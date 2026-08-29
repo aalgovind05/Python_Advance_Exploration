@@ -46,7 +46,7 @@ class Bank:
         old_pin = input('insert old pin: ')
         if old_pin == self.pin:
             create_new_pin = input('set new pin: ')
-            create_new_pin = self.pin
+            self.pin = create_new_pin
             print('your pin has been updated successfully')
         else:
             print('sala garib')
@@ -64,12 +64,12 @@ class Bank:
 
     def money_withwraval(self):
         insert_pin = input('insert your current pin: ')
-        if insert_pin == self.pin:
-            credit_amount = input('insert credit amount')
+        credit_amount = int(input('insert credit amount: '))
+        if insert_pin == self.pin and credit_amount < self.balance:
+            print(credit_amount,'has been credited')
             self.balance = self.balance - credit_amount
-        e
-
-        print('success')
+        else:
+            print('the amount is bigger then current amount')
         self.menu()
 
 
