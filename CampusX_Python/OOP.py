@@ -16,6 +16,12 @@ class Bank:
 
         if user_input == '1':
             self.set_pin()
+        elif user_input == '2':
+            self.reset_pin()
+        elif user_input == '3':
+            self.view_balance()
+        elif user_input == '4':
+            self.money_withwraval()
         else:
             exit()
     
@@ -25,16 +31,45 @@ class Bank:
     def set_pin (self):
         create_pin = input('create your first pin: ')
         self.pin = create_pin
-
         deposit = int(input('deposit your amount: '))
-
         if deposit >= 5000:
             self.balance = deposit
         else:
             print('minimum 5000 deposit require to open new account')
             self.menu()
+        print('your pin has been created successfully')
+        self.menu()
 
-        print('your pin has been created successfully: ')
+
+
+    def reset_pin(self):
+        old_pin = input('insert old pin: ')
+        if old_pin == self.pin:
+            create_new_pin = input('set new pin: ')
+            create_new_pin = self.pin
+            print('your pin has been updated successfully')
+        else:
+            print('sala garib')
+        self.menu()
+
+
+    def view_balance(self):
+        insert_pin = input('insert your current pin: ')
+        if insert_pin == self.pin:
+            print('your current balance is ',self.balance)
+        else:
+            print('sale chor nikal yaha se !!!!')
+        self.menu()
+
+
+    def money_withwraval(self):
+        insert_pin = input('insert your current pin: ')
+        if insert_pin == self.pin:
+            credit_amount = input('insert credit amount')
+            self.balance = self.balance - credit_amount
+        e
+
+        print('success')
         self.menu()
 
 
