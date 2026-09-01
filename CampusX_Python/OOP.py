@@ -68,7 +68,7 @@ class Bank:
     def money_withwraval(self):
         insert_pin = input('insert your current pin: ')
         credit_amount = int(input('insert credit amount: '))
-        if insert_pin == self.pin and credit_amount < self.balance:
+        if insert_pin == self.pin and credit_amount < self.__balance:
             print(credit_amount,'has been credited')
             self.__balance = self.__balance - credit_amount
         else:
@@ -82,3 +82,6 @@ obj = Bank()
 
 
 
+#with __balance we have made our balance function as private so no one can access it now but still if you want to access it
+# and want to do change on it then you can
+#use this "_Class name__function name" kind structure it follow here example = _Bank__balance()
