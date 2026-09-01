@@ -2,7 +2,7 @@ class Bank:
 
     def __init__(self):
         self.pin = ''
-        self.balance = 0
+        self.__balance = 0
         self.menu()
 
     def menu (self):
@@ -32,11 +32,13 @@ class Bank:
         create_pin = input('create your first pin: ')
         self.pin = create_pin
         deposit = int(input('deposit your amount: '))
+
         if deposit >= 5000:
-            self.balance = deposit
+            self.__balance = deposit
         else:
-            print('minimum 5000 deposit require to open new account')
+            print('minimum 5000 INR deposit require to open new account')
             self.menu()
+
         print('your pin has been created successfully')
         self.menu()
 
@@ -44,21 +46,22 @@ class Bank:
 
     def reset_pin(self):
         old_pin = input('insert old pin: ')
+
         if old_pin == self.pin:
             create_new_pin = input('set new pin: ')
             self.pin = create_new_pin
             print('your pin has been updated successfully')
         else:
-            print('sala garib')
+            print('sale chor nikal yaha se !!!!')
         self.menu()
 
 
     def view_balance(self):
         insert_pin = input('insert your current pin: ')
         if insert_pin == self.pin:
-            print('your current balance is ',self.balance)
+            print('your current balance is ',self.__balance)
         else:
-            print('sale chor nikal yaha se !!!!')
+            print('sala garib nikal yaha se !!!!')
         self.menu()
 
 
@@ -67,13 +70,15 @@ class Bank:
         credit_amount = int(input('insert credit amount: '))
         if insert_pin == self.pin and credit_amount < self.balance:
             print(credit_amount,'has been credited')
-            self.balance = self.balance - credit_amount
+            self.__balance = self.__balance - credit_amount
         else:
-            print('the amount is bigger then current amount')
+            print('the amount is bigger than current amount or pin is incorrect\n please check your pin and withdrawal amount')
         self.menu()
 
 
 
 
 obj = Bank()
+
+
 
