@@ -5,6 +5,13 @@ class Bank:
         self.__balance = 0
         self.menu()
 
+    def get_access(self):
+        return self.__balance          #this code will give access to read this variable named self.__balance
+
+    def ser_new(self,new_value):
+        self.__balance = new_value
+        
+
     def menu (self):
         user_input = input("""
         press 1 for set pin
@@ -81,7 +88,9 @@ class Bank:
 obj = Bank()
 
 
-
 #with __balance we have made our balance function as private so no one can access it now but still if you want to access it
 # and want to do change on it then you can
 #use this "_Class name__function name" kind structure it follow here example = _Bank__balance()
+
+### if ever we want to give access of our variabel than we can use getter and setter methods to give access to others by that upper code
+
