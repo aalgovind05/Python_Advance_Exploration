@@ -16,3 +16,11 @@ class Student(User):         # this (User) now have connected parent class with 
 
     def inroll(self):
         print('you have inroll in new course')
+
+
+u = User()
+s = Student()
+
+
+print(s.inroll())
+print(s.login())
