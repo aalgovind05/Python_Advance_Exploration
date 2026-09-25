@@ -28,4 +28,26 @@ print(s.login())
 
 
 
-#super()
+#super()#
+
+class Phone:
+    
+    def __init__(self,price,brand,camera):
+        print('inside phone constructor')
+        self.price = price
+        self.brand = brand
+        self.camera = camera
+
+    def buy(self):
+        print('buying phone')
+
+
+class Smartphone(Phone):
+    
+    def buy(self):
+        print('buying a smartphone')
+        super().buy()
+
+
+s = Smartphone(20000,'apple',14)
+s.buy()
